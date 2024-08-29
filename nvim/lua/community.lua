@@ -9,5 +9,5 @@ return {
   -- import/override with your plugins folder
 
   { import = "astrocommunity.colorscheme.catppuccin" },
-  { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.python-ruff" },
 }
