@@ -48,7 +48,7 @@ return {
         ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
-        -- move lines up and down using alt+j and alt+k
+        -- move lines up and down using alt+k and alt+j
         ["<M-k>"] = { "<cmd>m -2<cr>", desc = "Move line up" },
         ["<M-j>"] = { "<cmd>m +1<cr>", desc = "Move line down" },
 
