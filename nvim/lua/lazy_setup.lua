@@ -11,6 +11,17 @@ require("lazy").setup({
       update_notifications = true, -- Enable/disable notification about running `:Lazy update` twice to update pinned plugins
     },
   },
+  {
+    "mistricky/codesnap.nvim",
+    build = "make",
+    opts = {
+      mac_window_bar = false,
+      watermark = "",
+      bg_theme = "grape",
+      bg_x_padding = 15,
+      bg_y_padding = 20,
+    },
+  },
   { import = "community" },
   { import = "plugins" },
 } --[[@as LazySpec]], {
