@@ -22,6 +22,7 @@ require("lazy").setup({
       bg_y_padding = 20,
     },
   },
+  { "fedepujol/move.nvim", opts = {} },
   { import = "community" },
   { import = "plugins" },
 } --[[@as LazySpec]], {

@@ -49,8 +49,8 @@ return {
         ["<S-Tab>"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
         -- move lines up and down using alt+k and alt+j
-        ["<M-k>"] = { "<cmd>m -2<cr>", desc = "Move line up" },
-        ["<M-j>"] = { "<cmd>m +1<cr>", desc = "Move line down" },
+        ["<M-k>"] = { ":MoveLine(-1)<cr>", desc = "Move line up" },
+        ["<M-j>"] = { ":MoveLine(1)<cr>", desc = "Move line down" },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {
@@ -68,6 +68,11 @@ return {
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+      },
+      v = {
+        -- move lines up and down using alt+k and alt+j
+        ["<M-k>"] = { ":MoveBlock(-1)<cr>", desc = "Move block up" },
+        ["<M-j>"] = { ":MoveBlock(1)<cr>", desc = "Move block down" },
       },
     },
   },
