@@ -1,0 +1,13 @@
+# Ignore all by defauld
+/*
+/*/
+
+# And un-ignore those that are actually needed
+!.gitignore
+!README.md
+!/nvim/
+!/lazygit/
+!/hypr/
+!/kitty/
+!/dunst/
+!/waybar/
