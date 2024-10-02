@@ -15,6 +15,8 @@ return {
   { import = "astrocommunity.pack.cpp" },
 
   { import = "astrocommunity.pack.dart" },
+
+  { import = "astrocommunity.pack.proto" },
   -- Override some config to disable debugger by default
   {
     "akinsho/flutter-tools.nvim",
