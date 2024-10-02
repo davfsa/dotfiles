@@ -23,6 +23,7 @@ require("lazy").setup({
     },
   },
   { "fedepujol/move.nvim", opts = {} },
+  { "MeanderingProgrammer/render-markdown.nvim", opts = {} },
   { import = "community" },
   { import = "plugins" },
 } --[[@as LazySpec]], {

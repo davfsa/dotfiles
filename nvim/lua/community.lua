@@ -9,5 +9,22 @@ return {
   -- import/override with your plugins folder
 
   { import = "astrocommunity.colorscheme.catppuccin" },
+
   { import = "astrocommunity.pack.python-ruff" },
+
+  { import = "astrocommunity.pack.cpp" },
+
+  { import = "astrocommunity.pack.dart" },
+  -- Override some config to disable debugger by default
+  {
+    "akinsho/flutter-tools.nvim",
+    opts = function(_, opts)
+      if not opts.dev_log then opts.dev_log = {} end
+
+      opts.dev_log.open_cmd = "e"
+      opts.dev_log.notify_errors = true
+    end,
+  },
 }
+
+--p{ dev_log = { notify_errors = true, open_cmd = "vsplit" } }
