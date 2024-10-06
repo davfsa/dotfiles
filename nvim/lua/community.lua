@@ -28,5 +28,3 @@ return {
     end,
   },
 }
-
---p{ dev_log = { notify_errors = true, open_cmd = "vsplit" } }
