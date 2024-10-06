@@ -11,12 +11,10 @@ return {
   { import = "astrocommunity.colorscheme.catppuccin" },
 
   { import = "astrocommunity.pack.python-ruff" },
-
   { import = "astrocommunity.pack.cpp" },
-
   { import = "astrocommunity.pack.dart" },
-
   { import = "astrocommunity.pack.proto" },
+  { import = "astrocommunity.pack.rust" },
   -- Override some config to disable debugger by default
   {
     "akinsho/flutter-tools.nvim",
