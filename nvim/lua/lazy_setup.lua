@@ -24,6 +24,29 @@ require("lazy").setup({
   },
   { "fedepujol/move.nvim", opts = {} },
   { "MeanderingProgrammer/render-markdown.nvim", opts = {} },
+  {
+    "brenton-leighton/multiple-cursors.nvim",
+    version = "*", -- Use the latest tagged version
+    opts = {}, -- This causes the plugin setup function to be called
+    keys = {
+      { "<C-A-j>", "<Cmd>MultipleCursorsAddDown<CR>", mode = { "n", "x" }, desc = "Add cursor and move down" },
+      { "<C-A-k>", "<Cmd>MultipleCursorsAddUp<CR>", mode = { "n", "x" }, desc = "Add cursor and move up" },
+
+      { "<C-A-Up>", "<Cmd>MultipleCursorsAddUp<CR>", mode = { "n", "i", "x" }, desc = "Add cursor and move up" },
+      { "<C-A-Down>", "<Cmd>MultipleCursorsAddDown<CR>", mode = { "n", "i", "x" }, desc = "Add cursor and move down" },
+
+      {
+        "<C-A-LeftMouse>",
+        "<Cmd>MultipleCursorsMouseAddDelete<CR>",
+        mode = { "n", "i" },
+        desc = "Add or remove cursor",
+      },
+
+      { "<Leader>D", "<Cmd>MultipleCursorsJumpNextMatch<CR>", mode = { "n", "x" }, desc = "Jump to next cword" },
+
+      { "<C-A-S-l>", "<Cmd>MultipleCursorsLock<CR>", mode = { "n", "x" }, desc = "Lock virtual cursors" },
+    },
+  },
   { import = "community" },
   { import = "plugins" },
 } --[[@as LazySpec]], {
