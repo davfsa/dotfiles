@@ -105,5 +105,9 @@
         "notifications"
       ]
     }
-  }
+  },
+  "bar.workspaces.applicationIconMap": {
+    "title:[dD]iscord": ""
+  },
+  "bar.workspaces.ignored": "-98",
 }
