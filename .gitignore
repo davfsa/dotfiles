@@ -4,6 +4,7 @@
 
 # And un-ignore those that are actually needed
 !.gitignore
+!.gitmodules
 !README.md
 !/nvim/
 !/lazygit/
