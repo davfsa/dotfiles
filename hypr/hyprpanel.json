@@ -106,8 +106,17 @@
       ]
     }
   },
+  "theme.bar.menus.menu.dashboard.profile.size": "8.5em",
+  "menus.dashboard.controls.enabled": true,
+  "bar.workspaces.workspaceIconMap": {},
   "bar.workspaces.applicationIconMap": {
     "title:[dD]iscord": ""
   },
+  "bar.workspaces.applicationIconFallback": "󰣆",
+  "bar.workspaces.applicationIconEmptyWorkspace": "",
+  "bar.workspaces.spacing": 1,
   "bar.workspaces.ignored": "-98",
+  "theme.bar.buttons.workspaces.numbered_active_highlight_padding": "0.2em",
+  "bar.network.showWifiInfo": true,
+  "bar.media.format": "{title: - }{artist}"
 }
