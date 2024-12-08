@@ -47,7 +47,7 @@
   "bar.workspaces.icons.available": "",
   "bar.workspaces.workspaces": 0,
   "menus.volume.raiseMaximumVolume": true,
-  "theme.bar.buttons.y_margins": "0.4em",
+  "theme.bar.buttons.y_margins": "0em",
   "theme.bar.layer": "top",
   "theme.bar.dropdownGap": "2.9em",
   "theme.bar.margin_top": "0.5em",
@@ -58,14 +58,8 @@
   "bar.notifications.hideCountWhenZero": true,
   "bar.layouts": {
     "0": {
-      "left": [
-        "dashboard",
-        "workspaces",
-        "windowtitle"
-      ],
-      "middle": [
-        "media"
-      ],
+      "left": ["dashboard", "workspaces", "windowtitle"],
+      "middle": ["media"],
       "right": [
         "volume",
         "network",
@@ -76,34 +70,14 @@
       ]
     },
     "1": {
-      "left": [
-        "dashboard",
-        "workspaces",
-        "windowtitle"
-      ],
-      "middle": [
-        "media"
-      ],
-      "right": [
-        "volume",
-        "clock",
-        "notifications"
-      ]
+      "left": ["dashboard", "workspaces", "windowtitle"],
+      "middle": ["media"],
+      "right": ["volume", "clock", "notifications"]
     },
     "2": {
-      "left": [
-        "dashboard",
-        "workspaces",
-        "windowtitle"
-      ],
-      "middle": [
-        "media"
-      ],
-      "right": [
-        "volume",
-        "clock",
-        "notifications"
-      ]
+      "left": ["dashboard", "workspaces", "windowtitle"],
+      "middle": ["media"],
+      "right": ["volume", "clock", "notifications"]
     }
   },
   "theme.bar.menus.menu.dashboard.profile.size": "8.5em",
@@ -118,5 +92,11 @@
   "bar.workspaces.ignored": "-98",
   "theme.bar.buttons.workspaces.numbered_active_highlight_padding": "0.2em",
   "bar.network.showWifiInfo": true,
-  "bar.media.format": "{title: - }{artist}"
+  "bar.media.format": "{title: - }{artist}",
+  "menus.power.lowBatteryNotification": true,
+  "theme.bar.transparent": true,
+  "theme.bar.buttons.monochrome": false,
+  "menus.transition": "crossfade",
+  "scalingPriority": "gdk",
+  "theme.bar.outer_spacing": "0em"
 }
