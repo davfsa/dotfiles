@@ -3,6 +3,7 @@
   "bar.clock.showIcon": true,
   "bar.clock.showTime": true,
   "bar.customModules.scrollSpeed": 5,
+  "bar.customModules.updates.pollingInterval": 1440000,
   "bar.layouts": {
     "0": {
       "left": [
