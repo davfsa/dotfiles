@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # https://github.com/devadathanmb/hyprland-smart-borders
-# Commit SHA: 283fb47b939d146b3b05c65358b51c1d28284b34
+# Based on commit 283fb47b939d146b3b05c65358b51c1d28284b34
+
+set -euo pipefail
+IFS=$'\n\t'
 
 function handle {
     if [[ ${1:0:10} == "openwindow" ]]
@@ -11,32 +14,34 @@ function handle {
         then
             workspace_id=-99
         fi
-        windows=$(hyprctl workspaces -j | jq ".[] | select(.id == $workspace_id) | .windows")
 
-        if [[ $windows -eq 1 ]]
+        grounded=$(hyprctl clients -j | jq ".[] | select(.workspace.id == $workspace_id and .floating == false) | .address")
+        grounded_count=$(wc -l <<< "$grounded")
+
+        if [[ $grounded_count -eq 1 ]]
         then
             floating_status=$(hyprctl clients -j | jq ".[] | select(.address == \"0x$window_id\" ) | .floating" )
             if [[ $floating_status == "false" ]]
             then
-                hyprctl dispatch setprop address:0x$window_id noborder 1
+                hyprctl dispatch setprop address:0x$window_id noborder 1 >/dev/null
             else
-                hyprctl dispatch setprop address:0x$window_id noborder 0
+                hyprctl dispatch setprop address:0x$window_id noborder 0 >/dev/null
                 return
             fi
 
-        elif [[ $windows -eq 2 ]]
+        elif [[ $grounded_count -eq 2 ]]
         then
-            addresses=$(hyprctl clients -j | jq -r --arg foo "$foo" ".[] | select(.workspace.id == $workspace_id) | .address")
-            for address in $addresses
+            for address in $grounded
             do
                 if [[ "$address" != "$window_id" ]]; then
-                    hyprctl dispatch setprop address:$(echo $address | xargs) noborder 0
+                    hyprctl dispatch setprop address:$(echo $address | xargs) noborder 0 >/dev/null
                 fi
             done
         fi
 
-    elif [[ ${1:0:10} == "movewindow"  ]]
+    elif [[ ${1:0:10} == "movewindow" ]]
     then
+        echo $1
         window_id=$(echo $1 | cut --delimiter ">" --fields=3 | cut --delimiter "," --fields=1)
         workspace_id=$(echo $1 | cut --delimiter ">" --fields=3 | cut --delimiter "," --fields=2)
 
@@ -46,26 +51,26 @@ function handle {
             workspace_id=-99
         fi
 
-        windows=$(hyprctl workspaces -j | jq ".[] | select(.id == $workspace_id) | .windows")
+        grounded=$(hyprctl clients -j | jq ".[] | select(.workspace.id == $workspace_id and .floating == false) | .address")
+        grounded_count=$(wc -l <<< "$grounded")
 
-        if [[ $windows -eq 1 ]]
+        if [[ $grounded_count -eq 1 ]]
         then
             # Check if the current window is floating and then set the border accordingly
             floating_status=$(hyprctl clients -j | jq ".[] | select(.address == \"0x$window_id\" ) | .floating" )
             if [[ $floating_status == "false" ]]
             then
-                hyprctl dispatch setprop address:0x$window_id noborder 1
+                hyprctl dispatch setprop address:0x$window_id noborder 1 >/dev/null
             else
-                hyprctl dispatch setprop address:0x$window_id noborder 0
+                hyprctl dispatch setprop address:0x$window_id noborder 0 >/dev/null
                 return
             fi
-        elif [[ $windows -eq 2 ]]
+        elif [[ $grounded_count -eq 2 ]]
         then
-            addresses=$(hyprctl clients -j | jq -r --arg foo "$foo" ".[] | select(.workspace.id == $workspace_id) | .address")
-            for address in $addresses
+            for address in $grounded
             do
                 if [[ "$address" != "$window_id" ]]; then
-                    hyprctl dispatch setprop address:$(echo $address | xargs) noborder 0
+                    hyprctl dispatch setprop address:$(echo $address | xargs) noborder 0 >/dev/null
                 fi
             done
         fi
@@ -75,44 +80,55 @@ function handle {
         for workspace in $single_window_workspaces
         do
             window=$(hyprctl clients -j | jq ".[] | select(.workspace.id == $workspace) | .address")
-            hyprctl dispatch setprop address:$(echo $window | xargs) noborder 1
+            hyprctl dispatch setprop address:$(echo $window | xargs) noborder 1 >/dev/null
         done
 
     elif [[ ${1:0:11} == "closewindow" ]]
     then
         workspace_id=$(hyprctl activewindow -j | jq ".workspace.id")
-        windows=$(hyprctl workspaces -j | jq ".[] | select(.id == $workspace_id) | .windows")
 
-        if [[ $windows -eq 1 ]]
+        grounded=$(hyprctl clients -j | jq ".[] | select(.workspace.id == $workspace_id and .floating == false) | .address")
+        grounded_count=$(wc -l <<< "$grounded")
+
+        if [[ $grounded_count -eq 1 ]]
         then
             window_id=$(hyprctl activewindow -j | jq -r ".address")
             floating_status=$(hyprctl activewindow -j | jq ".floating")
             if [[ $floating_status == "false" ]]
             then
-                hyprctl dispatch setprop address:$window_id noborder 1
+                hyprctl dispatch setprop address:$window_id noborder 1 >/dev/null
             else
-                hyprctl dispatch setprop address:$window_id noborder 0
+                hyprctl dispatch setprop address:$window_id noborder 0 >/dev/null
                 return
             fi
-
         fi
 
     elif [[ ${1:0:18} == "changefloatingmode" ]]
     then
         floating_status=$(echo $1 | cut --delimiter ">" --fields 3 | cut --delimiter "," --fields 2)
-        address="0x$(echo $1 | cut --delimiter ">" --fields 3 | cut --delimiter "," --fields 1)"
-        workspace_id=$(hyprctl clients -j | jq --arg address "$address" '.[] | select(.address == $address) | .workspace.id')
+        window_id=$(echo $1 | cut --delimiter ">" --fields 3 | cut --delimiter "," --fields 1)
+
+        workspace_id=$(hyprctl activewindow -j | jq ".workspace.id")
+
+        grounded=$(hyprctl clients -j | jq ".[] | select(.workspace.id == $workspace_id and .floating == false) | .address")
+        grounded_count=$(wc -l <<< "$grounded")
+
         if [[ $floating_status -eq 1 ]]
         then
-            hyprctl dispatch setprop address:$address noborder 0
-        else
-            no_windows=$(hyprctl workspaces -j | jq ".[] | select(.id == $workspace_id) | .windows")
-            if [[ $no_windows -eq 1 ]]
+            hyprctl dispatch setprop address:0x$window_id noborder 0 >/dev/null
+
+            if [[ $grounded_count -eq 1 ]]
             then
-                hyprctl dispatch setprop address:$address noborder 1
-            else
-                hyprctl dispatch setprop address:$address noborder 0
+                hyprctl dispatch setprop address:$(echo $grounded | xargs) noborder 1 >/dev/null
             fi
+        elif [[ $grounded_count -eq 2 ]]
+        then
+            for address in $grounded
+            do
+                if [[ "$address" != "$window_id" ]]; then
+                    hyprctl dispatch setprop address:$(echo $address | xargs) noborder 0 >/dev/null
+                fi
+            done
         fi
     fi
 }
