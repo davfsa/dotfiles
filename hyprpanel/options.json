@@ -2,6 +2,9 @@
   "bar.clock.format": "%a %b %d  %H:%M",
   "bar.clock.showIcon": true,
   "bar.clock.showTime": true,
+  "bar.customModules.hypridle.label": false,
+  "bar.customModules.hyprsunset.label": false,
+  "bar.customModules.hyprsunset.temperature": "5000k",
   "bar.customModules.scrollSpeed": 5,
   "bar.customModules.updates.pollingInterval": 1440000,
   "bar.layouts": {
@@ -20,6 +23,8 @@
         "battery",
         "clock",
         "notifications",
+        "hypridle",
+        "hyprsunset",
         "power"
       ]
     },
@@ -59,14 +64,29 @@
   "bar.notifications.hideCountWhenZero": true,
   "bar.notifications.show_total": true,
   "bar.scrollSpeed": 1,
-  "bar.volume.label": true,
-  "bar.windowtitle.custom_title": false,
+  "bar.volume.label": false,
+  "bar.windowtitle.class_name": false,
+  "bar.windowtitle.custom_title": true,
   "bar.windowtitle.icon": true,
+  "bar.windowtitle.title_map": [
+    [
+      "com.github.aylur.ags",
+      "",
+      "Ags Settings"
+    ],
+    [
+      "org.gnome.texteditor",
+      "󱞁",
+      "Text Editor"
+    ]
+  ],
   "bar.windowtitle.truncation": true,
   "bar.workspaces.applicationIconEmptyWorkspace": "",
   "bar.workspaces.applicationIconFallback": "󰣆",
   "bar.workspaces.applicationIconMap": {
-    "title:[dD]iscord": ""
+    "title:[dD]iscord": "",
+    "class:com.github.Aylur.ags": "",
+    "org.gnome.texteditor": "󱞁"
   },
   "bar.workspaces.applicationIconOncePerWorkspace": true,
   "bar.workspaces.hideUnoccupied": true,
@@ -84,6 +104,7 @@
   "bar.workspaces.workspaceIconMap": {},
   "bar.workspaces.workspaceMask": false,
   "bar.workspaces.workspaces": 0,
+  "hyprpanel.restartCommand": "agsv1 -q; agsv1",
   "menus.bluetooth.showBattery": true,
   "menus.clock.time.hideSeconds": false,
   "menus.clock.time.military": true,
@@ -94,7 +115,7 @@
   "menus.dashboard.shortcuts.enabled": false,
   "menus.media.displayTime": true,
   "menus.power.lowBatteryNotification": true,
-  "menus.volume.raiseMaximumVolume": true,
+  "menus.volume.raiseMaximumVolume": false,
   "notifications.position": "top right",
   "notifications.timeout": 7000,
   "scalingPriority": "gdk",
@@ -130,5 +151,8 @@
   "theme.font.size": "1rem",
   "theme.font.weight": 600,
   "theme.osd.active_monitor": true,
-  "theme.osd.enable": true
+  "theme.osd.enable": true,
+  "theme.osd.location": "right",
+  "theme.osd.muted_zero": true,
+  "theme.osd.orientation": "vertical"
 }
