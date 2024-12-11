@@ -78,6 +78,11 @@
       "org.gnome.texteditor",
       "󱞁",
       "Text Editor"
+    ],
+    [
+      "jetbrains-idea",
+      "",
+      "JetBrains IDEA"
     ]
   ],
   "bar.windowtitle.truncation": true,
@@ -86,7 +91,8 @@
   "bar.workspaces.applicationIconMap": {
     "title:[dD]iscord": "",
     "class:com.github.Aylur.ags": "",
-    "org.gnome.texteditor": "󱞁"
+    "class:org.gnome.texteditor": "󱞁",
+    "class:jetbrains-.*": ""
   },
   "bar.workspaces.applicationIconOncePerWorkspace": true,
   "bar.workspaces.hideUnoccupied": true,
