@@ -89,7 +89,7 @@
   "bar.workspaces.applicationIconEmptyWorkspace": "",
   "bar.workspaces.applicationIconFallback": "󰣆",
   "bar.workspaces.applicationIconMap": {
-    "title:[dD]iscord": "",
+    "class:discord": "",
     "class:com.github.Aylur.ags": "",
     "class:org.gnome.texteditor": "󱞁",
     "class:jetbrains-.*": ""
