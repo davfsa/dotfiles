@@ -14,4 +14,6 @@ if [ -e "${CONFIG_FILENAME}" ]; then
   mv "${CONFIG_FILENAME}" "${CONFIG_FILENAME}.bkp"
 fi
 
+pkill agsv1
 cp "${BKP_PATH}/${CONFIG_FILENAME}" "${CONFIG_FILENAME}"
+hyprctl --instance 0 'dispatch exec agsv1'
