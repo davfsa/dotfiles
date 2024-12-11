@@ -116,11 +116,11 @@ function handle {
         if [[ $floating_status -eq 1 ]]
         then
             hyprctl dispatch setprop address:0x$window_id noborder 0 >/dev/null
+        fi
 
-            if [[ $grounded_count -eq 1 ]]
-            then
-                hyprctl dispatch setprop address:$(echo $grounded | xargs) noborder 1 >/dev/null
-            fi
+        if [[ $grounded_count -eq 1 ]]
+        then
+            hyprctl dispatch setprop address:$(echo $grounded | xargs) noborder 1 >/dev/null
         elif [[ $grounded_count -eq 2 ]]
         then
             for address in $grounded
