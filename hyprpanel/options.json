@@ -4,7 +4,7 @@
   "bar.clock.showTime": true,
   "bar.customModules.hypridle.label": false,
   "bar.customModules.hyprsunset.label": false,
-  "bar.customModules.hyprsunset.temperature": "5000k",
+  "bar.customModules.hyprsunset.temperature": "6000k",
   "bar.customModules.scrollSpeed": 5,
   "bar.customModules.updates.pollingInterval": 1440000,
   "bar.layouts": {
