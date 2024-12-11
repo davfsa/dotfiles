@@ -18,17 +18,16 @@ function handle {
         grounded=$(hyprctl clients -j | jq ".[] | select(.workspace.id == $workspace_id and .floating == false) | .address")
         grounded_count=$(wc -l <<< "$grounded")
 
+        floating_status=$(hyprctl clients -j | jq ".[] | select(.address == \"0x$window_id\" ) | .floating" )
+        if [[ $floating_status == "true" ]]
+        then
+            hyprctl dispatch setprop address:0x$window_id noborder 0 >/dev/null
+            return
+        fi
+
         if [[ $grounded_count -eq 1 ]]
         then
-            floating_status=$(hyprctl clients -j | jq ".[] | select(.address == \"0x$window_id\" ) | .floating" )
-            if [[ $floating_status == "false" ]]
-            then
-                hyprctl dispatch setprop address:0x$window_id noborder 1 >/dev/null
-            else
-                hyprctl dispatch setprop address:0x$window_id noborder 0 >/dev/null
-                return
-            fi
-
+            hyprctl dispatch setprop address:0x$window_id noborder 1 >/dev/null
         elif [[ $grounded_count -eq 2 ]]
         then
             for address in $grounded
