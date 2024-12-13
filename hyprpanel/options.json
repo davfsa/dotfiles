@@ -91,7 +91,7 @@
   "bar.workspaces.applicationIconMap": {
     "class:discord": "",
     "class:com.github.Aylur.ags": "",
-    "class:org.gnome.texteditor": "󱞁",
+    "class:org.gnome.TextEditor": "󱞁",
     "class:jetbrains-.*": ""
   },
   "bar.workspaces.applicationIconOncePerWorkspace": true,
