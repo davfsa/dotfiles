@@ -45,8 +45,8 @@ return {
         -- second key is the lefthand side of the map
 
         -- navigate buffer tabs
-        ["<Tab>"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
-        ["<S-Tab>"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+        ["<M-h>"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
+        ["<M-l>"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
         -- move lines up and down using alt+k and alt+j
         ["<M-k>"] = { ":MoveLine(-1)<cr>", desc = "Move line up" },
