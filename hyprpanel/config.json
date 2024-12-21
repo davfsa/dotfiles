@@ -1,4 +1,5 @@
 {
+  "bar.customModules.updates.pollingInterval": 1440000,
   "bar.clock.format": "%a %b %d  %H:%M",
   "bar.clock.showIcon": true,
   "bar.clock.showTime": true,
@@ -6,7 +7,6 @@
   "bar.customModules.hyprsunset.label": false,
   "bar.customModules.hyprsunset.temperature": "6000k",
   "bar.customModules.scrollSpeed": 5,
-  "bar.customModules.updates.pollingInterval": 1440000,
   "bar.layouts": {
     "0": {
       "left": [
@@ -110,7 +110,7 @@
   "bar.workspaces.workspaceIconMap": {},
   "bar.workspaces.workspaceMask": false,
   "bar.workspaces.workspaces": 0,
-  "hyprpanel.restartCommand": "agsv1 -q; agsv1",
+  "hyprpanel.restartCommand": "hyprpanel -q; hyprpanel",
   "menus.bluetooth.showBattery": true,
   "menus.clock.time.hideSeconds": false,
   "menus.clock.time.military": true,
