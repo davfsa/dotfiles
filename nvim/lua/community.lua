@@ -13,7 +13,7 @@ return {
   { import = "astrocommunity.pack.python-ruff" },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.dart" },
-  { import = "astrocommunity.pack.proto" },
+  -- { import = "astrocommunity.pack.proto" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.docker" },
