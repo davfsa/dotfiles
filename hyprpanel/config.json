@@ -70,9 +70,9 @@
   "bar.windowtitle.icon": true,
   "bar.windowtitle.title_map": [
     [
-      "com.github.aylur.ags",
+      "gjs",
       "",
-      "Ags Settings"
+      "Hyprpanel Settings"
     ],
     [
       "org.gnome.texteditor",
@@ -90,7 +90,7 @@
   "bar.workspaces.applicationIconFallback": "󰣆",
   "bar.workspaces.applicationIconMap": {
     "class:discord": "",
-    "class:com.github.Aylur.ags": "",
+    "class:gjs": "",
     "class:org.gnome.TextEditor": "󱞁",
     "class:jetbrains-.*": ""
   },
@@ -121,6 +121,7 @@
   "menus.dashboard.shortcuts.enabled": false,
   "menus.media.displayTime": true,
   "menus.power.lowBatteryNotification": true,
+  "menus.power.lowBatteryThreshold": 20,
   "menus.volume.raiseMaximumVolume": false,
   "notifications.position": "top right",
   "notifications.timeout": 7000,
