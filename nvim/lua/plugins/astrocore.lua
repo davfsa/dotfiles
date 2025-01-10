@@ -3,6 +3,43 @@
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 
+---@param direction 1|-1
+function NextUsedBuffer(direction)
+  local bufs = vim.t.bufs
+
+  -- First we need to translate buf to id
+  local originId = -1
+  local originBuf = vim.api.nvim_get_current_buf()
+  for i, v in ipairs(bufs) do
+    if originBuf == v then
+      originId = i
+      break
+    end
+  end
+
+  -- `originId` will always be set by now, as otherwise
+  -- it means that the current buffer doesnt exist, which
+  -- makes no sense
+  local candidateId = originId
+
+  local bufCount = #bufs
+  repeat
+    candidateId = candidateId + direction
+    if candidateId > bufCount then
+      candidateId = 1
+    elseif candidateId < 1 then
+      candidateId = bufCount
+    end
+
+    local candidateBuf = bufs[candidateId]
+
+    if rawequal(next(vim.fn.win_findbuf(candidateBuf)), nil) then
+      vim.cmd.buffer(candidateBuf)
+      break
+    end
+  until candidateId == originId
+end
+
 ---@type LazySpec
 return {
   "AstroNvim/astrocore",
@@ -45,8 +82,8 @@ return {
         -- second key is the lefthand side of the map
 
         -- navigate buffer tabs
-        ["<M-l>"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
-        ["<M-h>"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+        ["<M-l>"] = { function() NextUsedBuffer(1) end, desc = "Next buffer" },
+        ["<M-h>"] = { function() NextUsedBuffer(-1) end, desc = "Previous buffer" },
 
         -- move lines up and down using alt+k and alt+j
         ["<M-k>"] = { ":MoveLine(-1)<cr>", desc = "Move line up" },
