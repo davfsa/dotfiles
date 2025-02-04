@@ -161,5 +161,6 @@
   "theme.osd.enable": true,
   "theme.osd.location": "right",
   "theme.osd.muted_zero": true,
-  "theme.osd.orientation": "vertical"
+  "theme.osd.orientation": "vertical",
+  "bar.workspaces.monitorSpecific": true
 }
