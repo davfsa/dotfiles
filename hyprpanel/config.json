@@ -14,7 +14,7 @@
         "windowtitle"
       ],
       "middle": [
-        "media"
+        "cava"
       ],
       "right": [
         "volume",
@@ -28,28 +28,12 @@
         "power"
       ]
     },
-    "1": {
+    "*": {
       "left": [
         "workspaces",
         "windowtitle"
       ],
-      "middle": [
-        "media"
-      ],
-      "right": [
-        "volume",
-        "clock",
-        "notifications"
-      ]
-    },
-    "2": {
-      "left": [
-        "workspaces",
-        "windowtitle"
-      ],
-      "middle": [
-        "media"
-      ],
+      "middle": [],
       "right": [
         "volume",
         "clock",
@@ -162,5 +146,21 @@
   "theme.osd.location": "right",
   "theme.osd.muted_zero": true,
   "theme.osd.orientation": "vertical",
-  "bar.workspaces.monitorSpecific": true
+  "bar.workspaces.monitorSpecific": true,
+  "wallpaper.enable": false,
+  "bar.customModules.cava.showIcon": false,
+  "bar.customModules.cava.framerate": 120,
+  "bar.customModules.cava.showActiveOnly": true,
+  "bar.customModules.cava.leftClick": "menu:media",
+  "bar.customModules.cava.stereo": false,
+  "bar.customModules.cava.barCharacters": [
+    "▁",
+    "▂",
+    "▃",
+    "▄",
+    "▅",
+    "▆",
+    "▇",
+    "█"
+  ]
 }
