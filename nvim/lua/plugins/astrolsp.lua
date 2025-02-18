@@ -43,6 +43,24 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      gopls = {
+        settings = {
+          gopls = {
+            analyses = {
+              ST1003 = true,
+              fillreturns = true,
+              nilness = true,
+              nonewvars = true,
+              shadow = false, -- TODO: Revisit this
+              undeclaredname = true,
+              unreachable = true,
+              unusedparams = true,
+              unusedwrite = true,
+              useany = true,
+            },
+          },
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {
