@@ -153,14 +153,7 @@
   "bar.customModules.cava.showActiveOnly": true,
   "bar.customModules.cava.leftClick": "menu:media",
   "bar.customModules.cava.stereo": false,
-  "bar.customModules.cava.barCharacters": [
-    "▁",
-    "▂",
-    "▃",
-    "▄",
-    "▅",
-    "▆",
-    "▇",
-    "█"
-  ]
+  "theme.bar.menus.shadowMargins": "0 0",
+  "theme.bar.shadowMargins": "0 0 0 0",
+  "theme.notification.shadowMargins": "0 0"
 }
