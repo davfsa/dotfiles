@@ -129,7 +129,7 @@
   "theme.bar.buttons.workspaces.smartHighlight": true,
   "theme.bar.buttons.y_margins": "0.1em",
   "theme.bar.dropdownGap": "2em",
-  "theme.bar.floating": true,
+  "theme.bar.floating": false,
   "theme.bar.layer": "top",
   "theme.bar.location": "top",
   "theme.bar.margin_bottom": "0em",
