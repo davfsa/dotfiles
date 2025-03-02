@@ -27,7 +27,7 @@ link ()
 }
 
 
-# Syslink the appropriate .config files
+# Symlink the appropriate .config files
 link "zshrc"
 link "p10k.zsh"
 
