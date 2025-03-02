@@ -6,6 +6,13 @@
 !.gitignore
 !.gitmodules
 !README.md
+
+!ideavimrc
+!zshrc
+!zshrc
+!p10k.zsh
+!setup.sh
+
 !/nvim/
 !/lazygit/
 !/hypr/
