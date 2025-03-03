@@ -3,6 +3,7 @@
   "bar.clock.format": "%a %b %d  %H:%M",
   "bar.clock.showIcon": true,
   "bar.clock.showTime": true,
+  "bar.customModules.kbLayout.icon": "",
   "bar.customModules.hypridle.label": false,
   "bar.customModules.hyprsunset.label": false,
   "bar.customModules.hyprsunset.temperature": "6000k",
@@ -25,6 +26,7 @@
         "notifications",
         "hypridle",
         "hyprsunset",
+        "kbinput",
         "power"
       ]
     },
@@ -94,7 +96,6 @@
   "bar.workspaces.workspaceIconMap": {},
   "bar.workspaces.workspaceMask": false,
   "bar.workspaces.workspaces": 0,
-  "hyprpanel.restartCommand": "hyprpanel -q; hyprpanel",
   "menus.bluetooth.showBattery": true,
   "menus.clock.time.hideSeconds": false,
   "menus.clock.time.military": true,
