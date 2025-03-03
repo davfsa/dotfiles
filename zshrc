@@ -97,6 +97,7 @@ setopt +o nomatch
 bindkey "5~" kill-word
 
 . "$HOME/.cargo/env"
+. "$HOME/.local/bin/env"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
