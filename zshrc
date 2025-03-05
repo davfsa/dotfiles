@@ -96,8 +96,13 @@ setopt +o nomatch
 # CTRL + DEL
 bindkey "5~" kill-word
 
-. "$HOME/.cargo/env"
-. "$HOME/.local/bin/env"
+include () {
+  # source only if it exists
+  [[ -f "$1" ]] && source "$1"
+}
+
+include "$HOME/.cargo/env"
+include "$HOME/.local/bin/env"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
