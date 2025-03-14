@@ -6,7 +6,9 @@
 !.gitignore
 !.gitmodules
 !README.md
+
 !wallpaper.png
+!face.png
 
 !ideavimrc
 !zshrc

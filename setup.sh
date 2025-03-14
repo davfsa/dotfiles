@@ -14,7 +14,7 @@ link ()
         # to ~/.original_filename
         dest="$HOME/.$(basename "$file")"
     else
-        dest="$2"
+        dest="$HOME/$2"
     fi
 
     if [ -f "$dest" ]; then
@@ -22,7 +22,7 @@ link ()
         mv "$dest" "${dest}.back"
     fi
 
-    echo "[I] Creating symlink $dest -> $file"
+    echo "[I] Creating symlink $file -> $dest"
     ln -nfs "$file" "$dest"
 }
 
@@ -34,3 +34,5 @@ link "p10k.zsh"
 link "ideavimrc"
 
 link "tmux/tmux.conf"
+
+link "face.png" ".face.icon"
