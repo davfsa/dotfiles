@@ -11,8 +11,7 @@
   "bar.layouts": {
     "0": {
       "left": [
-        "workspaces",
-        "windowtitle"
+        "workspaces"
       ],
       "middle": [
         "cava"
@@ -25,15 +24,12 @@
         "clock",
         "notifications",
         "hypridle",
-        "hyprsunset",
-        "kbinput",
         "power"
       ]
     },
     "*": {
       "left": [
-        "workspaces",
-        "windowtitle"
+        "workspaces"
       ],
       "middle": [],
       "right": [
