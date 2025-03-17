@@ -113,6 +113,9 @@ include "$HOME/.local/bin/env"
 export EDITOR='nvim'
 export TERM='xterm-256color'
 
+
+alias lz=lazygit
+
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
 
