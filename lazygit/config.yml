@@ -1,2 +1,6 @@
 os:
-  editPreset: 'nvim'
+  editPreset: "nvim"
+
+git:
+  commit:
+    signOff: true
