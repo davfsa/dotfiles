@@ -17,6 +17,7 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.docker" },
+  { import = "astrocommunity.pack.terraform" },
 
   -- Override some config to disable debugger by default
   {
