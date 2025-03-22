@@ -113,6 +113,8 @@ include "$HOME/.local/bin/env"
 export EDITOR='nvim'
 export TERM='xterm-256color'
 
+# Set ANDROID_HOME
+export ANDROID_HOME="$HOME/Android/Sdk"
 
 alias lz=lazygit
 
@@ -131,6 +133,11 @@ alias lz=lazygit
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+eval "$(/home/davfsa/.local/bin/mise activate zsh)"
+
+fpath+=~/.zfunc
+autoload -Uz compinit && compinit
+
 # Create tmux session for ssh session
 if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_TTY" ]]; then
   systemd-inhibit --who $USER --what idle tmux-ssh 
@@ -140,4 +147,3 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # NOTE: Needs to be the last thing in the .zshrc
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
