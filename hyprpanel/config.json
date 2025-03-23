@@ -79,7 +79,7 @@
   "bar.workspaces.applicationIconOncePerWorkspace": true,
   "bar.workspaces.hideUnoccupied": true,
   "bar.workspaces.icons.available": "",
-  "bar.workspaces.ignored": "-98",
+  "bar.workspaces.ignored": "-\\d+",
   "bar.workspaces.numbered_active_indicator": "highlight",
   "bar.workspaces.reverse_scroll": false,
   "bar.workspaces.scroll_speed": 1,
