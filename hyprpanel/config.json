@@ -47,34 +47,13 @@
   "bar.notifications.show_total": true,
   "bar.scrollSpeed": 1,
   "bar.volume.label": false,
-  "bar.windowtitle.class_name": false,
-  "bar.windowtitle.custom_title": true,
-  "bar.windowtitle.icon": true,
-  "bar.windowtitle.title_map": [
-    [
-      "gjs",
-      "",
-      "Hyprpanel Settings"
-    ],
-    [
-      "org.gnome.texteditor",
-      "󱞁",
-      "Text Editor"
-    ],
-    [
-      "jetbrains-idea",
-      "",
-      "JetBrains IDEA"
-    ]
-  ],
-  "bar.windowtitle.truncation": true,
   "bar.workspaces.applicationIconEmptyWorkspace": "",
   "bar.workspaces.applicationIconFallback": "󰣆",
   "bar.workspaces.applicationIconMap": {
     "class:discord": "",
     "class:gjs": "",
-    "class:org.gnome.TextEditor": "󱞁",
-    "class:jetbrains-.*": ""
+    "jetbrains-idea": "",
+    "jetbrains-pycharm": ""
   },
   "bar.workspaces.applicationIconOncePerWorkspace": true,
   "bar.workspaces.hideUnoccupied": true,
@@ -151,6 +130,5 @@
   "bar.customModules.cava.leftClick": "menu:media",
   "bar.customModules.cava.stereo": false,
   "theme.bar.menus.shadowMargins": "0 0",
-  "theme.bar.shadowMargins": "0 0 0 0",
-  "theme.notification.shadowMargins": "0 0"
+  "theme.bar.shadowMargins": "0 0 0 0"
 }
