@@ -52,8 +52,7 @@
   "bar.workspaces.applicationIconMap": {
     "class:discord": "",
     "class:gjs": "",
-    "jetbrains-idea": "",
-    "jetbrains-pycharm": ""
+    "class:jetbrains-*": ""
   },
   "bar.workspaces.applicationIconOncePerWorkspace": true,
   "bar.workspaces.hideUnoccupied": true,
