@@ -2,5 +2,6 @@ os:
   editPreset: "nvim"
 
 git:
+  overrideGpg: true
   commit:
     signOff: true

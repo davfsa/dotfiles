@@ -9,13 +9,28 @@
   "bar.customModules.hyprsunset.temperature": "6000k",
   "bar.customModules.scrollSpeed": 5,
   "bar.layouts": {
-    "0": {
+    "base": {
       "left": [
         "workspaces"
       ],
       "middle": [
         "cava"
       ],
+      "right": [
+        "volume",
+        "network",
+        "bluetooth",
+        "clock",
+        "notifications",
+        "hypridle",
+        "power"
+      ]
+    },
+    "DP-2": {
+      "extends": "base"
+    },
+    "eDP-1": {
+      "extends": "base",
       "right": [
         "volume",
         "network",
@@ -31,7 +46,6 @@
       "left": [
         "workspaces"
       ],
-      "middle": [],
       "right": [
         "volume",
         "clock",
@@ -57,7 +71,6 @@
   "bar.workspaces.applicationIconOncePerWorkspace": true,
   "bar.workspaces.hideUnoccupied": true,
   "bar.workspaces.icons.available": "",
-  "bar.workspaces.ignored": "-\\d+",
   "bar.workspaces.numbered_active_indicator": "highlight",
   "bar.workspaces.reverse_scroll": false,
   "bar.workspaces.scroll_speed": 1,
@@ -129,5 +142,9 @@
   "bar.customModules.cava.leftClick": "menu:media",
   "bar.customModules.cava.stereo": false,
   "theme.bar.menus.shadowMargins": "0 0",
-  "theme.bar.shadowMargins": "0 0 0 0"
+  "theme.bar.shadowMargins": "0 0 0 0",
+  "bar.customModules.storage.paths": [
+    "/"
+  ],
+  "bar.workspaces.ignored": "-\\d+"
 }

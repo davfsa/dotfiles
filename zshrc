@@ -88,7 +88,6 @@ export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
 export PATH=~/bin:$PATH
 export PATH=~/go/bin:$PATH
 export PATH=~/.cargo/bin:$PATH
-export PATH=~/flutter/bin:$PATH
 
 # Leave global expressions that dont yield anything alone
 setopt +o nomatch
@@ -117,6 +116,7 @@ export TERM='xterm-256color'
 export ANDROID_HOME="$HOME/Android/Sdk"
 
 alias lz=lazygit
+alias lzd=lazydocker
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
@@ -133,8 +133,6 @@ alias lz=lazygit
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-eval "$(/home/davfsa/.local/bin/mise activate zsh)"
-
 fpath+=~/.zfunc
 autoload -Uz compinit && compinit
 
@@ -147,3 +145,6 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # NOTE: Needs to be the last thing in the .zshrc
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH"
+export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"

@@ -1,6 +1,6 @@
 # https://github.com/catppuccin/yazi/blob/5d3a1eecc304524e995fe5b936b8e25f014953e8/themes/macchiato/catppuccin-macchiato-blue.toml
 
-[manager]
+[mgr]
 cwd = { fg = "#8bd5ca" }
 
 hovered = { fg = "#24273a", bg = "#8aadf4" }
