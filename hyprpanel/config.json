@@ -17,12 +17,13 @@
         "cava"
       ],
       "right": [
+        "custom/recoding-indicator",
+        "custom/volume",
         "volume",
         "network",
         "bluetooth",
         "clock",
         "notifications",
-        "hypridle",
         "power"
       ]
     },
@@ -32,6 +33,7 @@
     "eDP-1": {
       "extends": "base",
       "right": [
+        "custom/recoding-indicator",
         "volume",
         "network",
         "bluetooth",
@@ -47,6 +49,7 @@
         "workspaces"
       ],
       "right": [
+        "custom/recoding-indicator",
         "volume",
         "clock",
         "notifications"

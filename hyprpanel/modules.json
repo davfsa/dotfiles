@@ -1,1 +1,11 @@
-{}
+{
+  "custom/recoding-indicator": {
+    "icon": "🔴",
+    "execute": "pidof wf-recorder || echo ''",
+    "interval": 1000,
+    "hideOnEmpty": true,
+    "actions": {
+      "onLeftClick": "hyprcap rec region"
+    }
+  }
+}
